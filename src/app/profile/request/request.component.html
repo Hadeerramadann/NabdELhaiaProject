@@ -1,0 +1,101 @@
+
+
+<!--<post-body></post-body>-->
+
+<div  class="card  bg-light" style="border: none; box-shadow: 5px 5px 2px pink; margin: auto; width:500px; ">
+  <div class="card-body">
+  <form [formGroup]="formLogin">
+  <!-- <div class="row" class="form-control" style="padding-left: 10px;">-->
+            
+     <div  style="border: none; padding:10px; text-align: right; font-size: 16px; color: palevioletred;">
+      <div> 
+      <label > الاسم</label>
+          <input formControlName="PationtName" type="text" class="form-control"   style="text-align: right;"  placeholder="ادخل اسم المريض ">
+          <div  *ngIf="formLogin.controls['PationtName'].invalid && formLogin.controls['PationtName'].dirty" aria-describedby="nameHelp">
+            <small *ngIf="formLogin.controls['PationtName'].errors.required"  id="namelHelp" class="form-text text-muted">
+              <p class="text-danger">  يجب ادخال الاسم
+             </p>
+              </small>
+              <small *ngIf="formLogin.controls['PationtName'].errors.minlength"  id="namelHelp" class="form-text text-muted">
+                  <p class="text-danger">
+                يجب ان يكون الاسم اكثر من 3 حروف
+                </p>
+              </small>
+              
+      </div>  
+        </div>
+          <br>
+          <label for="inputAddress">المدينه</label>
+          <select formControlName="City" class="form-control text-right">
+                      <option selected >الفيوم</option>
+                      <option>القاهره</option>
+                      <option>الجيزه</option>
+                      <option>بني سويف</option>
+                      <option>المنيا</option>
+                      <option>السادس من اكتوبر</option>
+                      <option>الاسكندريه</option>
+                      <option>اسوان</option>
+                      <option>الاقصر</option>
+                      <option>الغربيه</option>
+                      <option>بورسعيد</option>
+                      <option>الشرقيه</option>
+                      <option>طنطا</option>
+                      <option>شرم الشيخ</option>
+                      <option>البحر الاحمر</option>
+            
+            </select>
+            <br>
+            <div>
+            <label for="inputCity">مكان التبرع</label>
+            <input formControlName="Address" type="text" class="form-control" id="inputCity"  style="text-align: right;"  placeholder="ادخل مكان التبرع">
+            <div  *ngIf="formLogin.controls['Address'].invalid && formLogin.controls['Address'].dirty" aria-describedby="nameHelp">
+              <small *ngIf="formLogin.controls['Address'].errors.required"  id="namelHelp" class="form-text text-muted">
+                <p class="text-danger">  يجب ادخال مكان تبرع صحيح
+               </p>
+                </small>
+                </div>
+          </div>
+            <br>
+            <div>
+            <label for="inputCity">معاد التبرع</label>
+            <input formControlName="Date" type="text" class="form-control" id="inputCity" style="text-align: right;" placeholder="ادخل معاد التبرع ">
+            <div  *ngIf="formLogin.controls['Date'].invalid && formLogin.controls['Date'].dirty" aria-describedby="nameHelp">
+              <small *ngIf="formLogin.controls['Date'].errors.required"  id="namelHelp" class="form-text text-muted">
+                <p class="text-danger">  يجب ادخال مكان تبرع صحيح
+               </p>
+                </small>
+                </div>
+          </div>
+            <br>
+            <label for="inputState">فصيلة الدم</label>
+            <select formControlName="BloodType" id="inputState" class="form-control" style="text-align: right;" >
+            <br>
+            <option value="Aplus">+A</option>
+            <option  value="Aminus">-A</option>
+            <option  value="Bplus">+B</option>
+            <option value="Aminus">-B</option>
+            <option value="Oplus">+O</option>
+            <option value="Ominus">-O</option>
+            <option value="ABplus">+AB</option>
+            <option value="ABminus">-AB</option>
+            </select>
+            <br>
+          </div>
+         <div class="text-right"  >
+          <label for="comment" style=" font-size: 16px; color: palevioletred;">تفاصيل المنشور</label>
+          <textarea formControlName="Text" class="form-control" rows="2" style=" width: 100%; " id="comment"></textarea>
+          <div  *ngIf="formLogin.controls['Text'].invalid && formLogin.controls['Text'].dirty" aria-describedby="nameHelp">
+            <small *ngIf="formLogin.controls['Text'].errors.required"  id="namelHelp" class="form-text text-muted">
+              <p class="text-danger">  يجب ادخال تفاصيل عن المريض
+             </p>
+              </small>
+              </div>
+         </div>
+         <br/>
+         <button  (click)= "onClick()" [routerLink]="['/profile']" type="button"  [disabled]="formLogin.invalid" class="btn" style="border-radius: 10px; height: 30px;width: 70px;  padding:0px; background-color: palevioletred; color:white;  font-weight: bold; margin-left: 60px;"> طلب</button>
+    
+    <!--</div>-->
+   </form>
+  </div>
+  </div>
+

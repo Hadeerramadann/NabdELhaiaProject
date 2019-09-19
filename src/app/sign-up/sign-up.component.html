@@ -1,0 +1,171 @@
+
+
+ <div id="body" class="container  ">
+   <br><br>
+   <div class="row">
+  
+    <div class="col-sm-5 sidebars" >
+        <div > <img src="../../../assets/logo.png" style="height:600px;width: 500px; border-radius: 12px;margin-top: -100px;" title="logo"/></div>
+        </div>
+
+    <div class="col-sm-7 sidebars" >
+      <div class="card">
+         
+     <form class="SinupDivContainer" [formGroup]="formLogin"  >
+        <div class="form-row text-right ">
+           <div class="form-group col-md-4 text-right">
+              <label >العمر</label>
+              <input  type="number" class="form-control text-right"  >
+            </div>
+        <div class="form-group col-md-8 text-right">
+          <label >الاسم</label>
+          <input formControlName="Name" type="text" class="form-control text-right"  placeholder="ادخل الاسم الاول">
+          <div  *ngIf="formLogin.controls['Name'].invalid && formLogin.controls['Name'].dirty" aria-describedby="nameHelp">
+              <small *ngIf="formLogin.controls['Name'].errors.required"  id="namelHelp" class="form-text text-muted">
+                <p class="text-danger">  يجب ادخال الاسم
+               </p>
+                </small>
+                <small *ngIf="formLogin.controls['Name'].errors.minlength"  id="namelHelp" class="form-text text-muted">
+                    <p class="text-danger">
+                  يجب ان يكون الاسم اكثر من 3 حروف
+                  </p>
+                </small>
+                
+        </div>
+        </div>
+        
+        </div>
+          
+        
+
+          <div class="form-group form-row text-right text-right">
+              <div class=" col-md-5 text-right text-right">
+                      <label >المركز</label>
+                      <input type="text" class="form-control text-right" >
+                    </div>
+        <div class=" col-md-7 text-right">
+          <label >المدينه</label>
+          <select formControlName="Address" class="form-control text-right">
+            <option selected >الفيوم</option>
+            <option>القاهره</option>
+            <option>الجيزه</option>
+            <option>بني سويف</option>
+            <option>المنيا</option>
+            <option>السادس من اكتوبر</option>
+            <option>الاسكندريه</option>
+            <option>اسوان</option>
+            <option>الاقصر</option>
+            <option>الغربيه</option>
+            <option>بورسعيد</option>
+            <option>الشرقيه</option>
+            <option>طنطا</option>
+            <option>شرم الشيخ</option>
+            <option>البحر الاحمر</option>
+  
+          </select>
+        </div>
+        
+      </div>
+      <div class="form-group  text-right">
+              <label >فصيله الدم</label>
+              <select formControlName="BloodType"  class="form-control text-right">
+                <option value="Aplus">+A</option>
+                <option  value="Aminus">-A</option>
+                <option  value="Bplus">+B</option>
+                <option value="Aminus">-B</option>
+                <option value="Oplus">+O</option>
+                <option value="Ominus">-O</option>
+                <option value="ABplus">+AB</option>
+                <option value="ABminus">-AB</option>
+              </select>
+              <div  *ngIf="formLogin.controls['BloodType'].invalid && formLogin.controls['BloodType'].dirty" aria-describedby="bladHelp">
+                  <small *ngIf="formLogin.controls['BloodType'].errors.required"  id="bladlHelp" class="form-text text-muted">
+                      <p class="text-danger">
+                    يجب ادخال فصيله الدم الخاصه بك
+                  </p>
+                  </small>
+                    
+                    </div>
+            </div>
+
+           
+            <div class="form-group  text-right">
+              <label >قم بانشاء اسم مستخدم خاص بك</label>
+              <input formControlName="UserName" type="text" class="form-control text-right" >
+            </div>
+     
+
+      
+      <div class="form-group text-right">
+        <label for="exampleInputPassword1">  قم بانشاء كلمه مرور خاصه بك</label>
+        <input formControlName="Password" type="password" class="form-control text-right" id="exampleInputPassword1" aria-describedby="passHelp" >
+      
+        <div  *ngIf="formLogin.controls['Password'].invalid && formLogin.controls['Password'].dirty">
+            <small *ngIf="formLogin.controls['Password'].errors.required"  id="passlHelp" class="form-text text-muted">
+                <p class="text-danger"> 
+              يجب ادخال كلمه مرور خاصه بك 
+            </p>  
+            </small>
+           
+              <small *ngIf="formLogin.controls['Password'].errors.minlength"  id="passlHelp" class="form-text text-muted">
+                  <p class="text-danger">
+                كلمه مرور ضعيفه يجب ان تكون اكثر من 3 
+             </p>
+              </small>
+          </div>
+      
+      </div>
+
+
+
+      <div class="form-group text-right">
+            
+          <label  class=" text-right" >طريقه التواصل</label>
+          <br/>
+         
+              <input (change)="oncontactchanged(2)" class="form-check-input text-right" type="radio" name="gridRadios"  value="2" >
+              <label class="form-check-label text-right" for="gridRadios1">
+                الهاتف
+              </label>
+              <br/>
+            
+              <input (change)="oncontactchanged(1)" class="form-check-input text-right" type="radio" name="gridRadios"  value="1">
+              <label class="form-check-label text-right" for="gridRadios2">
+                الايميل
+              </label>
+              <br/>
+              <label  class=" text-right" >ادخل طريقه التواصل التي قمت باختيارها </label>
+              <br/>
+              <input  formControlName="Contact" type="text" class="form-control text-right" >
+              <div  *ngIf="formLogin.controls['Contact'].invalid && formLogin.controls['Contact'].dirty">
+                  <small *ngIf="formLogin.controls['Contact'].errors.required"  id="passlHelp" class="form-text text-muted">
+                      <p class="text-danger"> 
+                    يجب ادخال الطريقه التي سنتواصل بها بك 
+                  </p>  
+                  </small>
+                  <small *ngIf="formLogin.controls['Contact'].errors.maxLength"  id="passlHelp" class="form-text text-muted">
+                    <p class="text-danger">
+                ادخل ايميل صحيح 
+               </p>
+                </small>
+                    
+                    <small *ngIf="formLogin.controls['Contact'].errors.email"  id="passlHelp" class="form-text text-muted">
+                        <p class="text-danger">
+                    ادخل ايميل صحيح 
+                   </p>
+                    </small>
+                    <small *ngIf="formLogin.controls['Contact'].errors.minlength"  id="passlHelp" class="form-text text-muted">
+                        <p class="text-danger">
+                      الهاتف   يجب ان يكون اكثر من 11 رقم 
+                   </p>
+                    </small>
+                </div>
+    </div>
+     
+      <button [routerLink]="['/profile']" (click)="login()" type="submit"  [disabled]="formLogin.invalid" class="btn" style="border-radius: 10px; height: 30px;width: 100px;  padding:0px; background-color: palevioletred; color:white;  font-weight: bold;">انشاء حساب</button>
+    </form>
+    </div>
+    </div>
+  </div>
+</div>
+

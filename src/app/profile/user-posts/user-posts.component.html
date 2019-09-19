@@ -1,0 +1,18 @@
+
+
+
+<div class="container-fluid " >
+        
+        <!--  <p> {{id}}</p>-->
+          <ul  *ngFor="let new_ of posts" class="nav nav-pills"  >
+          
+             <br/>
+               <li class="nav-item">    
+               <!-- {{new_.UserName}}-->
+               <post-content  [post_content] ="new_"></post-content>
+                  <!--</a>routerLink="details/{{new_.ID}}"-->
+               </li>
+           
+            
+           </ul>
+</div>

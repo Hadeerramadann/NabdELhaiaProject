@@ -1,0 +1,128 @@
+
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+.btn
+{
+    margin-top: 3%;
+    color: #fff;
+    border-color: #fff;
+    border-radius: 0% !important;
+}
+
+.btn:hover
+{
+    color: rgb(201, 5, 5);
+    background-color: white;
+}
+.secicon
+{
+    text-align: center;
+    color: #fff;
+}
+.secicon:hover
+{
+    color: #fff;
+}
+
+@media (max-width: 740px) {
+  
+  .edit-image img {
+    margin-left: 22% !important;
+  }
+}
+.btn .fa {
+  margin-left: 3px;
+}
+
+.top-nav-collapse {
+  background-color: #424f95 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+   background: transparent !important; 
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #424f95 !important;
+  }
+}
+
+.btn-white {
+  color: black !important;
+}
+
+h6 {
+  line-height: 1.7;
+}
+
+.view 
+{
+
+
+background-image:linear-gradient(to top, #f4ceceb9, #e65d4823, #f7e2e0, #fda6a533, #e4dada4d) !important;
+
+}
+
+
+
+
+
+
+
+
+/* body{
+  background:grey;
+} */
+
+h1{
+  /* color:white; */
+  text-align:center;
+  font-family:helvetica;
+}
+
+
+
+#xyz:hover{
+  /* background:black; */
+  transition:0.2s;
+  cursor:crosshair;
+}
+
+#demo{
+  position:relative;
+  padding:10px 20px;
+  bottom:10px;
+  left:50%;
+  margin:10px 0px 0px -35px;
+  transition:0.2s ease;
+}
+#demo:hover{
+  /* background:black;
+  color:white; */
+  transition:0.2s ease;
+}
+/* .highlight{
+  color:  #242525;
+} */
+
+/*audio*/
+#audio-position{
+  margin:0 auto;
+  width:300px;
+}
+
+#makesound{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+

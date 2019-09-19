@@ -1,0 +1,91 @@
+
+<div *ngIf = "flag1 == true"class="card bg-light text-right" style="width: 700px; box-shadow: 10px 10px 10px rgb(243, 198, 198); margin: auto; border: none;">
+   <form  style="width:75%; margin:auto; text-align: right;">
+     <div  style="padding:10px; font-size: 16px; color: palevioletred;">
+           
+            
+            <!-- &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+             -->
+             <strong style="color: black"> <label for="inputAddress"> {{ post_content.UserName}}</label> </strong> &nbsp;&nbsp;
+            <img src="../../../assets/p1.jpg" style="width: 40px; height: 40px; border-radius: 20px">
+            <br>
+            <br>
+     </div>
+     
+     <label style="color: palevioletred; font-size: 17px;" >{{ post_content.BloodType}}</label>
+     &nbsp;  
+     <label style="color: palevioletred; font-size: 17px;" >: &nbsp;فصيله دم المريض   </label>
+     <br/>
+     <label style="color: palevioletred; font-size: 17px;" >{{ post_content.Address}}</label>
+     &nbsp;  
+     <label style="color: palevioletred; font-size: 17px;" >: &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;مكان التبرع  </label>
+     <br/>
+     <label style="color: palevioletred; font-size: 17px;" >{{ post_content.Date}}</label>
+     &nbsp;  
+     <label style="color: palevioletred; font-size: 17px;" >: &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;معاد التبرع </label>
+     <br/>
+
+
+     <label for="comment" style="color: palevioletred; font-size: 17px;">تفاصيل المنشور</label>
+      <textarea class="form-control text-right "  id="comment">{{ post_content.Text}}</textarea>
+      
+      
+      
+      <div class="row" style="margin-bottom: 20px;margin-top: 10px;" >
+          <div class="col-sm-4" >
+        <button class="btn btn-danger btn-block" type="button"  (click) ="deletpost()" > <span class="badge badge-light"
+          style="color: white ; background-color: rgb(218, 14, 14); border-radius: 10px;"></span>&nbsp; &nbsp;بلاغ <i class="fa fa-window-close" ></i></button>
+      </div>
+      <div class="col-sm-4" >
+        <button class="btn btn-primary btn-block" type="button" (click) =  "Setflag()">كومنت <i class="fa fa-comments"></i></button>
+        </div>
+        <div class="col-sm-4" >
+        <button class ="btn btn-success btn-block"type="button" (click)="likecount()"> <span class="badge badge-light"
+          style="color: white ; background-color: rgb(218, 14, 14);border-radius: 10px; " >{{likes}}</span>&nbsp; &nbsp;انوي التبرع <i class="fa fa-check-square-o" ></i></button>
+       </div> 
+      </div>
+    
+    <div *ngIf = "flag == true" class="panel panel-primary" style=" max-height: 100px ;margin-bottom: 10px;overflow:scroll;-webkit-overflow-scrolling: touch; font-size: 15px">
+         <ul class="list-group " *ngFor="let new_ of post_content.Comments"  >
+               <li class="list-group-item">  
+                <p> {{new_.Text}}   &nbsp; &nbsp;<strong style="color: black">{{new_.UserName}}</strong> <img src="../../../assets/1.jpg" style="height:20px;width: 20px; border-radius: 12px;"></p> 
+             
+
+                </li>
+              
+         </ul>
+        
+   
+    </div>
+   
+    <input class="form-control text-right" #comentinput (keydown.Enter)="post_comment(post_content.Post_ID);comentinput.value=''"  [(ngModel)]="comment_text"[ngModelOptions]="{standalone: true}" placeholder="اكتب تعليق" />
+     
+    <br>
+  </form>
+
+</div>
+<br>
+<br>
+
+<!--
+
+
+
+
+
+<p> {{post_content.UserName}}</p>
+<p> commentes is .....</p>
+<ul  *ngFor="let new_ of post_content.Comments" class="nav nav-pills"  >
+      
+    <br/>
+      <li class="nav-item">    
+      {{new_.UserName}
+
+         {{new_.Text}}
+      
+      </li>
+  
+   
+  </ul>
+-->

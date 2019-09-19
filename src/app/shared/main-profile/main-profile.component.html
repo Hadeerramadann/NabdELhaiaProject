@@ -1,0 +1,153 @@
+<div> 
+  <nav class="navbar navbar-expand-lg navbar-dark " style="height: 80px; background-color: black; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 15px; ">
+      <div class="container" style="margin-top: 15px;">
+       
+        <a class="navbar-brand"  style="padding: 0px;margin-left: 10%"> <img src="../../../assets/logo.png" style="height:100px;width: 100px; border-radius: 12px;margin-left: -150px;" title="logo"></a>
+       
+      
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+        </button>
+        &nbsp;&nbsp;
+        <div class="collapse navbar-collapse" id="navbarResponsive" >
+          <ul class="navbar-nav ml-auto" >
+              &nbsp;&nbsp;
+              <li class="nav-item Hover">
+                  <div class="dropdown text-right ">  
+                    
+                      <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" style="font-family: 'Thabit', serif;">
+                      
+                        <span class="badge badge-light"
+                        style="color: white ; background-color: rgb(218, 14, 14); border-radius: 10px; " *ngIf="getcommentscount()>0">{{getcommentscount()}}</span>
+                      
+                      <i class="fa fa-bell" style="font-size: 30px; color: wheat;"></i>
+                      </button>
+                      <div class="dropdown-menu text-right " style="width: 400px;" >
+                          
+                          <ul class="list-group text-right "  *ngFor="let new_ of comments"  >
+                             
+                            <!-- <div *ngFor="let new_ of post.Comments" > -->
+                              <li class="list-group-item text-right" > 
+                                <a href="profile/postcomment/{{new_.Post_ID}}"  style="text-decoration-style: none; text-decoration: none;">
+                                <div class="row">
+                                <div class="col-sm-9">
+
+                                    <p > تم التعليق بواسطه
+                                      <label> <strong  class="  text-right col-sm-5" style="color: red;" >{{new_.UserName}}</strong>  &nbsp;&nbsp;
+                                      </label> 
+                                  علي الطلب الخاص بك 
+                                  <br/>
+                                  <strong style="color: red;">
+                                    {{new_.Text}} 
+                                  </strong>
+                                     </p>
+                                    
+                                </div>
+                               <div class="col-sm-3">
+                                 <img src="../../../assets/logo.png" style="height:70px;width: 70px; border-radius: 12px;" alt="frind photo">
+                            
+                              </div>
+                              </div >
+                            </a> 
+                               </li>
+                               &nbsp;&nbsp;
+                              <!-- </div> -->
+                        </ul>
+                       
+                        
+                     
+                      </div>
+                    </div>
+              </li>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item ">
+                  <a  class="nav-link Hover" [routerLink]="['/home']"><p style="font-size: 15px;color: wheat;font-family: 'Thabit', serif;">
+                       الرئيسيه <i class="fa fa-home" style="font-size: 30px;"></i> 
+              </p></a>
+              </li>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item">
+                  <a class="nav-link Hover" [routerLink]="['/profile/request']"><p style=" font-size: 15px;color: wheat;font-family: 'Thabit', serif;">
+                      طلب تبرع <i style="font-size: 30px;" class="fa fa-tint"></i>
+                </p></a>
+                </li>&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/profile/Posts']"><p style="color: wheat;font-family: 'Thabit', serif;">
+                    المنشورات 
+                </p></a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link Hover" [routerLink]="['/home']" (click)= "c()"><p style="font-size: 15px;color: wheat;font-family: 'Thabit', serif;">
+                        تسجيل خروج <i style="font-size: 30px;" class="fa fa-power-off"></i>
+                  </p>  </a>
+                 </li> &nbsp;&nbsp; &nbsp;&nbsp;
+          </ul>
+                 </div>
+      </div>
+    </nav>
+
+
+
+            
+          <div>
+            
+<!--<header>containt</header>
+ <p>slider</p>-->
+ 
+ <div class="container-fluid">
+
+<br>
+  <div class="row" style="display:flex; align-items:stretch">
+      <div class="col-sm-8 sidebars" style="margin-left: 60px;">
+      
+       <router-outlet></router-outlet>
+      </div>
+      <div class="col-sm-3" style="margin-left: -60px;">
+          <div class="container" >
+            
+            <div class="card  " style="background-color: black; color: wheat; font-size: 20px;">
+            <img class="card-img-top" src="../../../assets/p1.jpg" alt="Card image" style="width:100px ;text-align: center;
+            height:100px ;
+            border-radius:50% ;
+             margin-left: 80px;  
+            margin-top: 20px;
+            box-shadow: 3px lightskyblue; " >
+            <!---->
+            <div> 
+              
+            <image-upload></image-upload>
+         
+          </div>
+            <!---->
+            <div class="card-body" style="text-align: center">
+              
+              <p class="card-text" style="margin-left: 20px; font-family: 'Thabit', serif;">{{username}} &nbsp;&nbsp;<i class="fa fa-home"></i></p>
+              <p class="card-text">  </p>
+            </div>
+          
+           </div>
+           <br>
+           <br>
+            <div class="list-group " >
+              <a href="#"  class="list-group-item text-right"style="background-color:rgb(214, 138, 138); color: white" >فصائل الدم </a>
+              <a [routerLink]="['/profile/Posts/Aplus']" class="list-group-item" style="background-color: black; color: wheat;"><img src="../../../assets/ab.jpeg" alt="a" style="height:20px;width: 20px; border-radius: 12px;"> &nbsp;&nbsp;A+</a>
+              <a [routerLink]="['/profile/Posts/Aminus']"  class="list-group-item"style="background-color: black; color: wheat;"><img src="../../../assets/ab.jpeg" alt="a" style="height:20px;width: 20px; border-radius: 12px;"> &nbsp;&nbsp;A-</a>
+             
+              <a [routerLink]="['/profile/Posts/Bplus']"  class="list-group-item"style="background-color: black; color: wheat;"><img src="../../../assets/ab.jpeg" alt="a" style="height:20px;width: 20px; border-radius: 12px;"> &nbsp;&nbsp;B+</a>
+              <a [routerLink]="['/profile/Posts/Bminus']"  class="list-group-item"style="background-color: black; color: wheat;"><img src="../../../assets/ab.jpeg" alt="a" style="height:20px;width: 20px; border-radius: 12px;"> &nbsp;&nbsp;B-</a>
+              <a [routerLink]="['/profile/Posts/Ominus']" class="list-group-item"style="background-color: black; color: wheat;"> <img src="../../../assets/ab.jpeg" alt="a" style="height:20px;width: 20px; border-radius: 12px;"> &nbsp;&nbsp;O-</a>
+              <a [routerLink]="['/profile/Posts/Oplus']"  class="list-group-item"style="background-color: black; color: wheat;"><img src="../../../assets/ab.jpeg" alt="a" style="height:20px;width: 20px; border-radius: 12px;"> &nbsp;&nbsp;O+</a>
+              <a [routerLink]="['/profile/Posts/ABminus']" class="list-group-item"style="background-color: black; color: wheat;"> <img src="../../../assets/ab.jpeg" alt="a" style="height:20px;width: 20px; border-radius: 12px;"> &nbsp;&nbsp;AB-</a>
+              <a [routerLink]="['/profile/Posts/ABplus']"  class="list-group-item"style="background-color: black; color: wheat;"><img src="../../../assets/ab.jpeg" alt="a" style="height:20px;width: 20px; border-radius: 12px;"> &nbsp;&nbsp;AB+</a>
+            </div>
+          </div>
+          
+        </div>
+     </div>
+    
+  </div>
+
+            
+        
+         <!-- <footer>footer</footer>-->
+        </div>
